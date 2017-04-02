@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+<body>
+	<button class="btn btn-info">bootstrap</button>
+	<p class="lead">bootstrap框架</p>
+	<p>bootstrap框架</p>
+	<p>bootstrap框架</p>
+	<span class="h1">bootstrap</span>
+	<h1>bootstrap</h1>
+	<h1><mark>bootstrap</mark></h1>
+	<h2>bootstrap</h2>
+	<h3>bootstrap</h3>
+	<h3><small>bootstrap</small></h3>
+	<h4>bootstrap</h4>
+	<h5>bootstrap</h5>
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+	<script>
+		var arr=[];
+		for(var i=0;i<100;i++){
+			arr[i]=parseInt(100*Math.random());
+		}
+		// console.log(arr.length);
+		function _qickSort(arr){
+			left = 0 ;
+			right = arr.length;
+			var key ;
+
+			// 查找右边第一个比arr[left]要小的数
+			function sort(left,right){
+				key = arr[left];
+				while( left<right && arr[right]>key ){
+					right--;
+				}
+				arr[left]=arr[right];
+				arr[right] = key;
+			}
+
+
+		}
+		var arr1=[3,5,8,2,9,5];
+		// console.log(_qsort(arr1));
+		function _sort(arr,left=0,right=arr.length-1){
+		var key = arr[left];
+		while(left < right){
+			while(left < right && arr[right] >= key) right--;
+			if(left < right){arr[left] = arr[right];left++;}
+			while(left < right && arr[left] <= key) left++;
+			if (left < right) { arr[right] = arr[left]; right--; }
+		}
+		arr[left]=key;//这个right值需要理解，这个right到底是什么、
+		console.log(arr);
+		
+		console.log(right);
+		return right;
+	}
+	// 递归的作用：先排了左边列的再排右边，其中左有左右列，右有左右列，直到最后剩下只有两个数时才停止
+	function _qsort(arr,left=0,right=arr.length-1){
+		if (left < right) {
+			var mid = _sort(arr,left,right);
+			_qsort(arr,left,mid-1);//为满足下面一行的左下标，传参必须为left，不能为0因为下面一行也要调用这个来排序
+			_qsort(arr,mid+1,right);	
+		}
+		return arr;
+	}
+	Array.prototype.distinct = function(){
+           var ret = [];
+           for(var i=1; i<this.length;i++){
+                   for(var j=i+1;j<this.length;j++){
+                        if(this[j]==this[i]){
+                                ret.push(this.splice(j,1)[0]);
+                                 //这步骤是最重要的this.splice(j,1)删除重复的元素，splice返回的是被删除的数组，加[0]就是
+                                //这个被删除的元素，ret.push(这个元素)，把这个重复的元素加入到数组ret中
+                        }
+                   }
+           }           
+}
+//test
+console.log(['a','c','c','e','d','a','e','a','e','v']);
+_countChar2(['a','c','c','e','d','a','e','a','e','v']);
+
+     function _countChar(arr){
+     	var newArr = [];
+     	var arrConunt = [];
+     	// newArr = arr[0];
+     	// arrConunt[0] = 1;
+     	newArr.push(arr[0]);arrConunt.push(1);
+     	// console.log(newArr);
+     	for (var i =  1; i < arr.length; i++) {
+     		for (var j = 0; j < newArr.length; j++) {
+     			if ( arr[i] == newArr[j] ) { arrConunt[j] += 1; break; }
+     			else if ( j ==  newArr.length-1 ) { newArr.push(arr[i]);arrConunt.push(1); }
+     		}
+     	}
+     	// console.log("newArr:"+newArr,"arrConunt"+arrConunt);
+     	for (var i = 0; i < newArr.length; i++) {
+     		console.log(newArr[i],":",arrConunt[i]);
+     	}
+
+     }
+     function _countChar2(arr){
+     	var newArr = [];
+     	var arrConunt = [];
+     	newArr.push(arr[0]);
+     	arrConunt.push(1);
+     	var len = 0;
+     	for (var i = 1; i < arr.length; i++) {
+     		// console.log("arr:"+arr[i]);
+     		len = newArr.length;
+     		for (var j = 0; j < len; j++) {
+     			// console.log("newArr:"+newArr[j]);
+     			// console.log("arrConunt:"+arrConunt[j]);
+     			if(newArr[j] == arr[i]){ arrConunt[j]++; break; }
+     			else if ( j == newArr.length-1 ) { 
+     				newArr.push(arr[i]);
+     				arrConunt.push(1);
+     			}
+     		}
+     	}
+     	console.log(newArr,arrConunt);
+     }
+
+	// Array.prototype.distinct=function(){
+	// 	var arr=[];
+	// 	var obj={};
+	// 	for(var i=0;i<this.length;i++){
+	// 		if(obj[this[i]]==undefined)
+	// 			obj[this[i]]=this[i];
+	// 		else if(obj[this[i]])
+	// 			arr.push(this[i]);
+	// 		}
+	// 	return arr;
+	// }
+// alert(['a','b','c','d','b','a','e'].distinct());
+	</script>
+</html>

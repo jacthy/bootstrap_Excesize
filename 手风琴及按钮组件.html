@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style>
+
+	</style>
+</head>
+<body>
+	<!-- <div class="panel-group " id="accordion">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"> 
+					<a href="#panel_one" data-parent="#accordion" data-toggle="collapse">第一部分</a>
+				</h3>
+			</div>
+			<div id="panel_one" class="panel-collapse collapse">
+				<div class="panel-body">
+					第一部分的内容
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"> 
+					<a href="#panel_two" data-parent="#accordion" data-toggle="collapse" >第一部分</a>
+				</h3>
+			</div>
+			<div id="panel_two" class="panel-collapse collapse">
+				<div class="panel-body">
+					第一部分的内容
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"> 
+					<a href="#panel_three" data-parent="#accordion" data-toggle="collapse">第一部分</a>
+				</h3>
+			</div>
+			<div id="panel_three" class="panel-collapse collapse">
+				<div class="panel-body">
+					第一部分的内容
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<div class="panel-group " id="accordion">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"> 
+					<a href="#panel_one"  data-toggle="collapse">第一部分</a>
+				</h3>
+			</div>
+			<div id="panel_one" class="panel-collapse collapse">
+				<div class="panel-body">
+					第一部分的内容
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"> 
+					<a href="#panel_two"  data-toggle="collapse" >第一部分</a>
+				</h3>
+			</div>
+			<div id="panel_two" class="panel-collapse collapse">
+				<div class="panel-body">
+					第一部分的内容
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"> 
+					<a href="#panel_three"  data-toggle="collapse">第一部分</a>
+				</h3>
+			</div>
+			<div id="panel_three" class="panel-collapse collapse">
+				<div class="panel-body">
+					第一部分的内容
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+	$('#panel_one,#panel_two,#panel_three,#panel_fore').collapse({
+		parent:'#accordion',
+		toggle:false,
+	});
+</script>
+</html>

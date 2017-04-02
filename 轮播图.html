@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style>
+		.carousel-indicators li{
+			border-color: green!important;
+		}
+	</style>
+</head>
+<body>
+	<div id="myCarousel" class="carousel slide" >
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="item active"><img  class="center-block" width="500px"  height="100px" class="img-thumbnail" src="./img/2.png" alt=""></div>
+			<div class="item"><img class="center-block" width="500px"  height="100px" class="img-thumbnail"  src="./img/2.png" alt=""></div>
+			<div class="item"><img  class="center-block" width="500px"  height="100px" class="img-thumbnail" src="./img/2.png" alt=""></div>
+		</div>
+		<a href="#myCarousel" data-slide="prev" class="carousel-control left">&lsaquo;</a>
+		<a href="#myCarousel" data-slide="next" class="carousel-control right">&rsaquo;</a>
+	</div>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+	$('#myCarousel').carousel({
+		interval: 1000,
+		wrap:false,
+	});
+</script>
+</html>
